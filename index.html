@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Code by - www.codeinfoweb.com -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glassy Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      body {
+        background-image: url("./bg.jpg");
+        background-size: cover;
+        background-position: center;
+        font-family: "Poppins", sans-serif;
+      }
+      .glass {
+        backdrop-filter: blur(20px) brightness(110%);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 10px;
+      }
+      .btn {
+        transition: all 0.2s;
+      }
+      .btn:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    </style>
+  </head>
+  <body class="flex items-center justify-center h-screen">
+    <div
+      class="bg-gray-900 bg-opacity-60 p-4 rounded-xl w-full h-full flex items-center justify-center"
+    >
+      <div class="glass p-6 rounded-xl w-80 content-container">
+        <div
+          class="text-white text-right text-3xl p-3 h-16 mb-5 border-2 border-white/20 rounded-lg"
+          id="result"
+        >
+          0
+        </div>
+        <div class="grid grid-cols-4 gap-4 text-white">
+          <button
+            class="btn glass p-4 rounded-lg bg-rose-500 hover:bg-rose-400"
+            onclick="clearDisplay(); animateButton(this)"
+          >
+            C
+          </button>
+          <button
+            class="btn glass p-4 rounded-lg"
+            onclick="deleteDigit(); animateButton(this)"
+          >
+            X
+          </button>
+          <button
+            class="btn glass p-4 rounded-lg"
+            onclick="appendToDisplay('%'); animateButton(this)"
+          >
+            %
+          </button>
+          <button
+            class="btn glass p-4 rounded-lg"
+            onclick="appendToDisplay('/'); animateButton(this)"
+          >
+            /
+          </button>
+
+          <button
+            class="btn glass p-4 rounded-lg"
+            onclick="appendToDisplay('7'); animateButton(this)"
+          >
+            7
+          </button>
+          <button
+            class="btn glass p-4 rounded-lg"
+            onclick="appendToDisplay('8'); animateButton(this)"
+          >
+            8
+          </button>
+          <button
+            class="btn glass p-4 rounded-lg"
+            onclick="appendToDisplay('9'); animateButton(this)"
+          >
+            9
+          </button>
+          <button
+            class="btn glass p-4 rounded-lg"
+            onclick="appendToDisplay('*'); animateButton(this)"
+          >
+            *
+          </button>
+
+          <button
+            class="btn glass p-4 rounded-lg"
+            onclick="appendToDisplay('4'); animateButton(this)"
+          >
+            4
+          </button>
+          <button
+            class="btn glass p-4 rounded-lg"
+            onclick="appendToDisplay('5'); animateButton(this)"
+          >
+            5
+          </button>
+          <button
+            class="btn glass p-4 rounded-lg"
+            onclick="appendToDisplay('6'); animateButton(this)"
+          >
+            6
+          </button>
+          <button
+            class="btn glass p-4 rounded-lg"
+            onclick="appendToDisplay('-'); animateButton(this)"
+          >
+            -
+          </button>
+
+          <button
+            class="btn glass p-4 rounded-lg"
+            onclick="appendToDisplay('1'); animateButton(this)"
+          >
+            1
+          </button>
+          <button
+            class="btn glass p-4 rounded-lg"
+            onclick="appendToDisplay('2'); animateButton(this)"
+          >
+            2
+          </button>
+          <button
+            class="btn glass p-4 rounded-lg"
+            onclick="appendToDisplay('3'); animateButton(this)"
+          >
+            3
+          </button>
+          <button
+            class="btn glass p-4 rounded-lg"
+            onclick="appendToDisplay('+'); animateButton(this)"
+          >
+            +
+          </button>
+
+          <button
+            class="btn glass p-4 rounded-lg"
+            onclick="appendToDisplay('0'); animateButton(this)"
+            colspan="2"
+          >
+            0
+          </button>
+          <button
+            class="btn glass p-4 rounded-lg"
+            onclick="appendToDisplay('.'); animateButton(this)"
+          >
+            .
+          </button>
+          <button
+            class="btn glass w-32 p-4 rounded-lg bg-rose-500 hover:bg-rose-400"
+            onclick="calculateResult(); animateButton(this)"
+          >
+            =
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
